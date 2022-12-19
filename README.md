@@ -2,7 +2,11 @@
 
 A simple demo of how to deploy a [Jupyter Book](https://jupyterbook.org/en/stable/intro.html) static website to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) that is automatically built with [GitHub Actions](https://docs.github.com/en/actions).
 
-Pages are deployed to `<username>.github.io/<repository-name>`. The live example of this demo is at https://byarbrough.github.io/jupyterbook-template/
+Pages are deployed to `<username>.github.io/<repository-name>`. The live example of this demo is at https://usafa-ece.github.io/jupyterbook-template/
+
+- Recommend reading [Structure the Table of Contents](https://jupyterbook.org/en/stable/structure/toc.html) for the `book/_toc.yml` file
+- Recommend reading [Markdown files](https://jupyterbook.org/en/stable/file-types/markdown.html) in Jupyter Books
+- Recommend reading [Configuration reference](https://jupyterbook.org/en/stable/customize/config.html) for the `book/_config.yml` file
 
 ## How it works
 
@@ -29,6 +33,8 @@ This is a template repository, so you can [create your own repository from this 
 1. Follow the docs to edit your repository settings and tell pages to deploy from `gh-pages` branch. See [Publishing from a branch](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-from-a-branch)
 2. Use the drop down menu to tell GitHub pages to deploy from `/root` on that branch
 3. Manually trigger a workflow on the `main` branch to verify everything is working.
+
+![github pages settings](https://user-images.githubusercontent.com/6315292/208469724-203ad297-d4b0-4205-88a3-33988e3d4889.png)
 
 ### Modify book content
 

@@ -33,6 +33,7 @@ This is a template repository, so you can [create your own repository from this 
 1. Follow the docs to edit your repository settings and tell pages to deploy from `gh-pages` branch. See [Publishing from a branch](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-from-a-branch)
 2. Use the drop down menu to tell GitHub pages to deploy from `/root` on that branch
 3. Manually trigger a workflow on the `main` branch to verify everything is working.
+4. Cruise through the `book/_config.yml` to update everything.
 
 ![github pages settings](https://user-images.githubusercontent.com/6315292/208469724-203ad297-d4b0-4205-88a3-33988e3d4889.png)
 

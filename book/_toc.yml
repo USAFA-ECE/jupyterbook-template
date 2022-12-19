@@ -3,7 +3,12 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Course Info
+    chapters:
+      - file: faq
+  - caption: Readings
+    chapters:
+      - file: markdown
+      - file: notebooks
+      - file: markdown-notebooks

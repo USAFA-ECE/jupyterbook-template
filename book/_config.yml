@@ -1,15 +1,20 @@
+---
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: My sample book
-author: The Jupyter Book Community
+author: DFEC
 logo: logo.png
-copyright: '2022'
+copyright: '2023'
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+
+# Add a "Launch on Google Colab" button to .ipynb files
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -17,8 +22,8 @@ latex:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+# bibtex_bibfiles:
+#  - references.bib
 
 # Information about where the book exists on the web
 repository:
@@ -32,3 +37,8 @@ html:
   favicon: favicon.ico
   use_issues_button: true
   use_repository_button: true
+
+# Uncomment to use mermaid diagrams
+# sphinx:
+  # extra_extensions:
+    # - sphinxcontrib.mermaid

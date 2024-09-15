@@ -1,37 +1,46 @@
 ---
-name: deploy-book
+name: GitHub Pages
 
 # Only run this when the main branch changes
 on:
   push:
     branches:
       - main
+  pull_request: # allow for testing build artifcats before merge
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }} # only run one of these jobs at a time
     steps:
-      - uses: actions/checkout@v2
-
-      # Install dependencies
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements-book.txt
 
       # Build the book
       - name: Build the book
-        run: |
-          jupyter-book build book/
+        run: jupyter-book build book/
+
+      - name: Upload book as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book
+          path: book/_build/html/
+          retention-days: 1
 
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.9.0
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        # Only publish if the main branch
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/_build/html

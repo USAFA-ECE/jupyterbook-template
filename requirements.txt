@@ -1,4 +1,4 @@
-jupyter-book
+jupyter-book<1.0
 pre-commit
 # Uncomment if using mermaid diagrams
 # sphinxcontrib.mermaid

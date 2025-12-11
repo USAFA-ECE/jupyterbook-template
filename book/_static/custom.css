@@ -1,0 +1,9 @@
+img.shadow {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+
+/* Highlight table rows on hover */
+tr:hover {
+  background-color: #ecf6f8;
+}
